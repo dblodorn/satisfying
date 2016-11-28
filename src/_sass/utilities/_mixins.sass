@@ -1,0 +1,64 @@
+//-------------------------------------------------------------------
+//  Mixins
+//-------------------------------------------------------------------
+
+// Responsive
+$phablet-width: 960px
+$super-large: 1600px
+
+=phabletup
+  @media (min-width: #{$phablet-width})
+    @content
+
+=super-large
+  @media (min-width: #{$super-large})
+    @content
+
+// Height Width
+=h-w-t-r-b-l-pos($height,$width,$top,$right,$bottom,$left,$position)
+  height: $height
+  width: $width
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  position: $position
+
+// Border
+=border($border,$thickness,$type,$color)
+  @if $border == all
+    border: $thickness $type $color
+  @else if $border == right
+    border-right: $thickness $type $color
+  @else if $border == left
+    border-left: $thickness $type $color
+  @else if $border == top
+    border-top: $thickness $type $color
+  @else if $border == bottom
+    border-bottom: $thickness $type $color
+
+
+=size($height,$width)
+  height: $height
+  width: $width
+
+// Transition
+// +transition(all, 0.2s, ease-in-out);
+=transition($transition-property, $transition-time, $method)
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+// Box Shadow
+// +box-shadow(0,1px,4px,rgba(0, 0, 0, 0.075));
+=box-shadow($top: 0, $left: 0, $blur: 4, $color: rgba(0, 0, 0, 0.075), $inset: false)
+  @if $inset
+    -webkit-box-shadow: inset $top $left $blur $color
+    -moz-box-shadow: inset $top $left $blur $color
+    box-shadow: inset $top $left $blur $color
+  @else
+    -webkit-box-shadow: $top $left $blur $color
+    -moz-box-shadow: $top $left $blur $color
+    box-shadow: $top $left $blur $color

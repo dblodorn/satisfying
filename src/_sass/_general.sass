@@ -1,0 +1,23 @@
+//-------------------------------------------------------------------
+//  TOP LEVEL SELECTOR STYLING
+//-------------------------------------------------------------------
+
+html
+  +phabletup
+    font-size: 62.5%
+  font-size: 56%
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeSpeed
+
+body
+  font-size: $base-font-size
+  overflow-x: hidden
+  width: 100vw
+  margin: 0
+  *
+    @extend %border-box
+
+img
+  width: 100%
+  height: auto
+  margin-bottom: -3px

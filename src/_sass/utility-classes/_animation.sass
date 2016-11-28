@@ -1,0 +1,27 @@
+//-------------------------------------------------------------------
+// ANIMATION CLASSES
+//-------------------------------------------------------------------
+
+// Fade In 
+@keyframes fade-in
+  0%
+    opacity: 0
+  80%
+    opacity: 1
+  100%
+    opacity: 1
+
+.fade-in
+  animation: fade-in 0.5s normal forwards ease-in-out
+
+// Pulse
+@keyframes pulseAnimation
+    0%   
+      opacity: 1
+    50%  
+      opacity: 0
+    100% 
+      opacity: 1
+
+.pulse
+  animation: pulseAnimation 1s infinite
