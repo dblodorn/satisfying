@@ -11,15 +11,17 @@ export default {
   name: 'VideoPlayer',
   data () {
     return {
-      videoUrl: 'https://s3-us-west-1.amazonaws.com/db13/satisfying/g-cubes.mp4',
+      videoUrl: 'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-01.mp4',
       audioUrl: 'https://s3-us-west-1.amazonaws.com/db13/satisfying/ff5cryst.mid'
     }
   },
   created: () => {
     setTimeout(() => {
-      const vid = document.getElementById('a-satisfying-video')
-      vid.onended = function (e) {
+      let vid = document.getElementById('a-satisfying-video')
+      document.getElementById('a-satisfying-video').onended = function (e) {
         console.log('Video has ended!')
+        vid.src = 'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-02.mp4'
+        vid.load()
         vid.play()
       }
     }, 10)
