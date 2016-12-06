@@ -17,12 +17,24 @@ export default {
   },
   created: () => {
     setTimeout(() => {
-      let vid = document.getElementById('a-satisfying-video')
-      document.getElementById('a-satisfying-video').onended = function (e) {
-        console.log('Video has ended!')
-        vid.src = 'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-02.mp4'
-        vid.load()
-        vid.play()
+      let videos = [
+        'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-01.mp4',
+        'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-02.mp4',
+        'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-03.mp4'
+      ]
+      let i = 0
+      const satisfyer = document.getElementById('a-satisfying-video')
+      satisfyer.onended = function (e) {
+        if (i < videos.length) {
+          i = i + 1
+          satisfyer.src = videos[i]
+          satisfyer.load()
+          satisfyer.play()
+        } else {
+          satisfyer.src = videos[0]
+          satisfyer.load()
+          satisfyer.play()
+        }
       }
     }, 10)
   }
