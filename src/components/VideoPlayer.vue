@@ -1,7 +1,7 @@
 <template lang="pug">
   section#video
-    video(autoplay='' muted='' id="a-satisfying-video")
-      source(:src="videoUrl" type='video/mp4')
+    video(autoplay='' muted='' loop='' id="a-satisfying-video")
+      source(src="https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-01.mp4" type='video/mp4')
 </template>
 
 <script>
@@ -23,17 +23,19 @@ export default {
         'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-03.mp4'
       ]
       let i = 0
-      const satisfyer = document.getElementById('a-satisfying-video')
-      satisfyer.onended = function (e) {
-        if (i < videos.length) {
-          i = i + 1
-          satisfyer.src = videos[i]
-          satisfyer.load()
-          satisfyer.play()
-        } else {
-          satisfyer.src = videos[0]
-          satisfyer.load()
-          satisfyer.play()
+      const vidLooper = () => {
+        const satisfyer = document.getElementById('a-satisfying-video')
+        satisfyer.onended = function (e) {
+          if (i < videos.length) {
+            i = i + 1
+            satisfyer.src = videos[i]
+            satisfyer.load()
+            satisfyer.play()
+          } else {
+            satisfyer.src = videos[0]
+            satisfyer.load()
+            satisfyer.play()
+          }
         }
       }
     }, 10)
@@ -42,7 +44,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  
   @import "../_sass/utilities/_utilities.sass"
 
   section#video
@@ -60,5 +61,4 @@ export default {
       overflow: hidden
       transform: translate(-50%, -50%)
       background-color: $white
-
 </style>

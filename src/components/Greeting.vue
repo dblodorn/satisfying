@@ -71,10 +71,15 @@ export default {
   //
 
   ul.banner
-    +h-w-t-r-b-l-pos(null,100vw,null,null,null,null,fixed)
+    transform: rotate(90deg)
+    top: 44vh
+    left: -61rem
+    width: 101vh
+    height: 15rem
+    overflow: hidden
+    position: fixed
     text-overflow: ellipsis
     white-space: nowrap
-    -webkit-column-break-inside: avoid
     page-break-inside: avoid
     vertical-align: middle
     padding-left: 0
