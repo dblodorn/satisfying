@@ -16,7 +16,7 @@ export default {
     }
   },
   created: () => {
-    setTimeout(() => {
+    const videoLooper = () => {
       let videos = [
         'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-01.mp4',
         'https://s3-us-west-1.amazonaws.com/db13/satisfying/sv-02.mp4',
@@ -38,7 +38,7 @@ export default {
           }
         }
       }
-    }, 10)
+    }
   }
 }
 </script>
