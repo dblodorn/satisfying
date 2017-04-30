@@ -13,7 +13,7 @@ export default {
   name: 'Greeting',
   data () {
     return {
-      appname: 'Oddly satisfyiNG WEBSITE ODDLY SATISFYING WEBSITE ODDLY SATISFYING WEBSITE ODDLY SATISFYING WEBSITE  '
+      appname: 'Oddly Satisfying Website Oddly Satisfying Website Oddly Satisfying Website Oddly Satisfying Website Oddly Satisfying Website Oddly Satisfying Website  '
     }
   },
   created: () => {
@@ -71,10 +71,10 @@ export default {
   //
 
   ul.banner
-    top: 4rem
-    left: 4rem
-    width: 60rem
-    height: 10rem
+    top: 2rem
+    left: 2rem
+    width: calc(50vw - 4rem)
+    height: 14vh
     overflow: hidden
     position: fixed
     text-overflow: ellipsis
@@ -86,19 +86,20 @@ export default {
     z-index: 2
 
     li
-      font-family: $zigzag
+      font-family: $boogie
       display: inline-block
       -webkit-column-break-inside: avoid
       page-break-inside: avoid
   
   .greeting
     @extend %gradient
-    +border(all,8px,solid,$white)
+    +border(all,.5rem,ridge,tan)
     +box-shadow(0,3px,12px,rgba(0, 0, 0, 0.275))
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.65)
     bottom: 0
-    padding: 1.5vh 0 1vh
+    padding-top: 1.85vh
     font-size: 8vh
-    color: $yellow
+    color: $white
     font-weight: 300
     letter-spacing: 5px
 
